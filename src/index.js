@@ -1,4 +1,4 @@
-/* Unban all 
+/* Unban all */
 const Discord = require('discord.js');
 const { Client, MessageEmbed, Intents } = require('discord.js');
 const client = new Client({ intents: [Intents.FLAGS.GUILDS, Intents.FLAGS.GUILD_MESSAGES, Intents.FLAGS.GUILD_MEMBERS] });
@@ -17,8 +17,8 @@ client.on('messageCreate', async (message) => {
               message.channel.send(`Fetched ban list with ${i.size} entries.`);
               const ids = i.map((u) => u.user.id);
               ids.forEach(async (id) => {
-                  await guild.members.unban(id, 'Your Reason Here!').then(async (u) => {
-                    message.channel.send(`Unbanned: ${u.tag}`);
+                  await guild.members.unban(id, 'Given another chance.').then(async (u) => {
+                    message.channel.send(`Unbanned: **${u.tag}** | **(${u.id})**`);
                       count++;
                   });
               });
@@ -32,7 +32,7 @@ client.on('messageCreate', async (message) => {
 
 
 
-client.login(process.env.TOKEN);*/
+client.login(process.env.TOKEN);
 
 /*Unmute all
 const Discord = require('discord.js');
